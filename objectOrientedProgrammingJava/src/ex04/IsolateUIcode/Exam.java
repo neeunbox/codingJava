@@ -1,4 +1,4 @@
-package ex04.Isolate.ui.code;
+package ex04.IsolateUIcode;
 
 public class Exam {
 	private int kor;
@@ -41,7 +41,7 @@ public class Exam {
 
 	// 평균
 	public float avg() {
-		return this.total() / 3.0f;
+		return total() / 3.0f;
 	}
 	
 	

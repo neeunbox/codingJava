@@ -1,4 +1,4 @@
-package ex04.Isolate.ui.code;
+package ex04.IsolateUIcode;
 
 public class ExamList {
 	private Exam[] exams;
@@ -14,10 +14,14 @@ public class ExamList {
 		exams = new Exam[size];
 		current = 0;
 	}
-	
 
-	// Add exam
-	public void addExam(Exam exam) {
+	// 출력값 처리 분리
+	public Exam get(int i) {
+		return  this.exams[i];
+	}
+
+	// 입력값 처리 분리
+	public void add(Exam exam) {
 		// 1.배열의 크기가 capacity 와 같은가?
 		System.out.println("array length :" + exams.length);
 		System.out.println("current :" + current);
@@ -35,14 +39,9 @@ public class ExamList {
 		current++;
 	}
 
-
-	// 사용자로부터 입력값을 가져오는 부분을 분리했습니다.
-	public Exam getExam(int i) {
-		return  this.exams[i];
-	}
-
 	// 입력받은 배열의 크기를 돌려준다.
-	public int getSize() {
+	public int size() {
 		return current;
 	}
+	
 }

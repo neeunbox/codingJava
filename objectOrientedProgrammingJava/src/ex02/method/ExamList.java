@@ -17,91 +17,6 @@ public class ExamList {
 		current = 0;
 	}
 	
-	// 메인 메뉴
-	public int inputMenu() {
-		Scanner scan = new Scanner(System.in);
-		
-		// 메인 메뉴 부분
-		System.out.println("┌────────────────────────────────┐");
-		System.out.println("│          메인 메뉴             │");
-		System.out.println("└────────────────────────────────┘");
-		System.out.println("\t1.성적입력");
-		System.out.println("\t2.성적출력");
-		System.out.println("\t3.성적출력범위");
-		System.out.println("\t4.종료");
-		System.out.print("\t선택>");
-		int menu = scan.nextInt();
-		
-		return menu;
-	}
-
-	// 생적 입력
-	public void inputList() {
-		Scanner scan = new Scanner(System.in);
-		
-		// 성적 입력 부분
-		System.out.println("┌────────────────────────────────┐");
-		System.out.println("│          성적 입력             │");
-		System.out.println("└────────────────────────────────┘");
-		
-		int kor, eng, math;
-		
-			do{
-				System.out.print("국어 :");
-				kor = scan.nextInt();
-			
-				if (kor<0 || 100<kor) {					
-					System.out.println("성정범위(0~100)을 벗어났습니다.");
-				}
-				
-			}while(kor<0 || 100<kor);
-			
-			do{
-				System.out.print("영어 :");
-				eng = scan.nextInt();
-			
-				if (eng<0 || 100<eng) {					
-					System.out.println("성정범위(0~100)을 벗어났습니다.");
-				}
-				
-			}while(eng<0 || 100<eng);
-			
-			do{
-				System.out.print("수학 :");
-				math = scan.nextInt();
-			
-				if (math<0 || 100<math) {					
-					System.out.println("성정범위(0~100)을 벗어났습니다.");
-				}
-				
-			}while(math<0 || 100<math);
-			
-			Exam exam = new Exam();
-			
-			exam.kor = kor;
-			exam.eng = eng;
-			exam.math = math;
-			
-			
-			// 1.배열의 크기가 capacity 와 같은가?
-			System.out.println("array length :" + exams.length);
-			System.out.println("current :" + current);
-			if (exams.length == current) {
-				// 2.크기가 5개 정도 더 큰 새로운 배열을 생성하시오.  
-				Exam[] temp	= new Exam[current + 5];
-				// 3.값을 옮겨준다.
-				for(int i=0; i<current; i++) {
-					temp[i] = exams[i];
-				}
-				// 4.새로만든 배열을 참조하도록 한다.
-				exams = temp;
-			}
-			
-			exams[current] = exam;
-			current++;
-	}
-
-
 	// 성적 출력 
 	public void printList() {
 		this.printList(this.current);
@@ -137,4 +52,73 @@ public class ExamList {
 			System.out.println("─────────────────────────────────");
 		}
 	}
+
+	// 생적 입력
+	public void inputList() {
+		try (Scanner scan = new Scanner(System.in)) {
+			// 성적 입력 부분
+			System.out.println("┌────────────────────────────────┐");
+			System.out.println("│          성적 입력             │");
+			System.out.println("└────────────────────────────────┘");
+			
+			int kor, eng, math;
+			
+				do{
+					System.out.print("국어 :");
+					kor = scan.nextInt();
+				
+					if (kor<0 || 100<kor) {					
+						System.out.println("성정범위(0~100)을 벗어났습니다.");
+					}
+					
+				}while(kor<0 || 100<kor);
+				
+				do{
+					System.out.print("영어 :");
+					eng = scan.nextInt();
+				
+					if (eng<0 || 100<eng) {					
+						System.out.println("성정범위(0~100)을 벗어났습니다.");
+					}
+					
+				}while(eng<0 || 100<eng);
+				
+				do{
+					System.out.print("수학 :");
+					math = scan.nextInt();
+				
+					if (math<0 || 100<math) {					
+						System.out.println("성정범위(0~100)을 벗어났습니다.");
+					}
+					
+				}while(math<0 || 100<math);
+				
+				Exam exam = new Exam();
+				
+				exam.kor = kor;
+				exam.eng = eng;
+				exam.math = math;
+				
+				
+				// 1.배열의 크기가 capacity 와 같은가?
+				System.out.println("array length :" + exams.length);
+				System.out.println("current :" + current);
+				if (exams.length == current) {
+					// 2.크기가 5개 정도 더 큰 새로운 배열을 생성하시오.  
+					Exam[] temp	= new Exam[current + 5];
+					// 3.값을 옮겨준다.
+					for(int i=0; i<current; i++) {
+						temp[i] = exams[i];
+					}
+					// 4.새로만든 배열을 참조하도록 한다.
+					exams = temp;
+				}
+				
+				exams[current] = exam;
+		}
+		
+		current++;
+	}
+
+
 }

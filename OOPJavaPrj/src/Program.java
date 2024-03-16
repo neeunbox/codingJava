@@ -1,9 +1,9 @@
-import ex04.Isolate.ui.code.Exam;
 
 public class Program {
     public static void main(String[] args) {
-        Exam exam = new Exam(1, 1, 1);
+        NewlecExam exam = new NewlecExam();
+        exam.setEng(10);
 
-        System.out.println(exam.getTotal());
+        System.out.println(exam.total());
     }
 }

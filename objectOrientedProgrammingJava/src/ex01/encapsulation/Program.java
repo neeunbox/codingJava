@@ -39,20 +39,20 @@ public class Program {
 	}
 
 	public static int inputMenu() {
-		Scanner scan = new Scanner(System.in);
-		
-		// 메인 메뉴 부분
-		System.out.println("┌────────────────────────────────┐");
-		System.out.println("│          메인 메뉴             │");
-		System.out.println("└────────────────────────────────┘");
-		System.out.println("\t1.성적입력");
-		System.out.println("\t2.성적출력");
-		System.out.println("\t3.성적출력범위");
-		System.out.println("\t4.종료");
-		System.out.print("\t선택>");
-		int menu = scan.nextInt();
-		
-		return menu;
+		try (Scanner scan = new Scanner(System.in)) {
+			// 메인 메뉴 부분
+			System.out.println("┌────────────────────────────────┐");
+			System.out.println("│          메인 메뉴             │");
+			System.out.println("└────────────────────────────────┘");
+			System.out.println("\t1.성적입력");
+			System.out.println("\t2.성적출력");
+			System.out.println("\t3.성적출력범위");
+			System.out.println("\t4.종료");
+			System.out.print("\t선택>");
+			int menu = scan.nextInt();
+			
+			return menu;
+		}
 		
 	}
 

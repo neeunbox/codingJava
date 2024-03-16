@@ -35,13 +35,13 @@ public class Exam {
 	}
 
 	// 합계 
-	public int getTotal() {
+	public int total() {
 		return kor + eng + math;
 	}
 
 	// 평균
-	public float getAvg() {
-		return this.getTotal() / 3.0f;
+	public float avg() {
+		return total() / 3.0f;
 	}
 	
 	
