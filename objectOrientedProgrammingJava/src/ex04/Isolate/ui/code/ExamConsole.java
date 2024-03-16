@@ -102,10 +102,10 @@ public class ExamConsole {
 			int math = exam.getMath();
 			
 			// getTotal 사용
-			int total = exam.getTotal();
+			int total = exam.total();
 			
 			// getAvg 사용
-			float avg = exam.getAvg();
+			float avg = exam.avg();
 					
 			System.out.printf("국어 : %3d\n", kor);
 			System.out.printf("영어 : %3d\n", eng);
