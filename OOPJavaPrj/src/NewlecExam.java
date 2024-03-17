@@ -1,4 +1,4 @@
-import ex04.IsolateUIcode.Exam;
+import ex05.abstraction.Exam;
 
 public class NewlecExam extends Exam {
 

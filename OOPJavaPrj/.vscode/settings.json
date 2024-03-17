@@ -4,7 +4,7 @@
     "java.project.referencedLibraries": {
         "include": [
             "lib/**/*.jar",
-            "/Users/seungrak/codingJava/objectOrientedProgrammingJava/objectOrientedProgrammingJava.jar"
+            "/Users/seungrak/codingJava/objectOrientedProgrammingJava/**/*.jar"
         ],
         "exclude": [
             "lib/exmlbr.jar"
