@@ -6,7 +6,7 @@ public class Program {
 
 	public static void main(String[] args) {
 		
-		ExamConsole list = new ExamConsole();
+		ExamConsole list = new NewlecExamConsole();
 		
 		int menu;
 		int size = 2;

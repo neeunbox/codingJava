@@ -37,7 +37,7 @@ public abstract class Exam {
 	// 합계 
 	public abstract int total();
 
-	// 자식
+	// 자식만 접근 가능
 	protected int onTotal() {
 		return kor + eng + math;
 	}
