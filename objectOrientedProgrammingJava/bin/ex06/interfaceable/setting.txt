@@ -1,1 +1,1 @@
-ex06.interfaceable.B
+ex06.interfaceable.C
